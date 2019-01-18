@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Checklists</title>
+{% endblock head %}
+
+{% block content %}
+    <h1>Checklists</h1>
+    <div class="">Procedurer</div>
+    {% for item in procedures %}
+        <div class="">
+            <a href="{{ url_for('get_procedure', path=item.filestem)}}">{{item.title}}</a>
+        </div>
+    {% endfor %}
+
+    <div class="" style="padding-top:2em;">Aftaler</div>
+    {% for item in contracts %}
+        <div class="">
+            <a href="{{ url_for('get_contract', path=item.filestem)}}">{{item.title}}</a>
+        </div>
+    {% endfor %}
+
+{% endblock content %}

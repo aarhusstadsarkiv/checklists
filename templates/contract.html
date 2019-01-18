@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ contract.title}}</title>
+{% endblock head %}
+
+{% block content %}
+<div id="header">
+    <h1>{{contract.title}}</h1>
+    <h3>{{contract.date}}</h3>
+</div>
+
+<div id="content">
+    {{contract.content|safe}}
+</div>
+{% endblock content %}
