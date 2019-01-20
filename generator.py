@@ -11,7 +11,6 @@ from flask_frozen import Freezer
 
 DOCS_EXTENSION = '.md'
 
-
 class Document:
     def __init__(self, filepath):
         """Filepath is a Path-object"""
@@ -65,7 +64,7 @@ class Collection:
 
 
 app = Flask(__name__)
-
+app.config['FREEZER_DESTINATION'] = 'docs'
 procedures = Collection('procedures')
 contracts = Collection('contracts')
 
